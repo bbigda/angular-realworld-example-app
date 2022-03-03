@@ -1,8 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
 
-import { Article, ArticlesService } from '../core';
+import {Article, ArticlesService} from '../core';
+import {CatFact} from '../shared/cats/catFact';
 
 @Component({
   selector: 'app-editor-page',
@@ -89,5 +90,13 @@ export class EditorComponent implements OnInit {
 
   updateArticle(values: Object) {
     Object.assign(this.article, values);
+  }
+
+  // TODO : markdown for cat quote, patch/set, better concatenate
+  handleCatFact(catFact: CatFact) {
+    console.dir(catFact);
+    this.articleForm.patchValue({
+      body: `${this.articleForm.value.body} ${catFact.text} \n`
+    });
   }
 }

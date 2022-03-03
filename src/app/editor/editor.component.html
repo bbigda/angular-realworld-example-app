@@ -23,10 +23,11 @@
             </fieldset>
 
             <fieldset class="form-group">
+              <app-cat-facts-button class="pull-xs-right m-b-1" (catFact)="handleCatFact($event)">Get Inspiration</app-cat-facts-button>
               <textarea class="form-control"
                 formControlName="body"
                 rows="8"
-                placeholder="Write your article (in markdown)">
+                placeholder="Write your article (in markdown). Need an idea ? Try the 'Get Inspiration' button !">
               </textarea>
             </fieldset>
 
