@@ -3,7 +3,7 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 
 import {Article, ArticlesService} from '../core';
-import {CatFact} from '../shared/cats/catFact';
+import {CatFact} from '../shared/cat-facts/catFact';
 
 @Component({
   selector: 'app-editor-page',

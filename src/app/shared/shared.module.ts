@@ -8,7 +8,7 @@ import {ArticleListComponent, ArticleMetaComponent, ArticlePreviewComponent} fro
 import {FavoriteButtonComponent, FollowButtonComponent} from './buttons';
 import {ListErrorsComponent} from './list-errors.component';
 import {ShowAuthedDirective} from './show-authed.directive';
-import {CatFactsButtonComponent} from './cats/cat-facts-button/cat-facts-button.component';
+import {CatFactsButtonComponent} from './cat-facts/cat-facts-button/cat-facts-button.component';
 
 
 @NgModule({

@@ -13,6 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import {NotifierModule} from 'angular-notifier';
+import {customNotifierOptions} from './notifier.config';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent, HeaderComponent],
@@ -23,7 +25,8 @@ import { environment } from '../environments/environment';
     HomeModule,
     AuthModule,
     AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    NotifierModule.withConfig(customNotifierOptions)
   ],
   providers: [],
   bootstrap: [AppComponent]
