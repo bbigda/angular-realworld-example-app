@@ -1,3 +1,9 @@
-<button type="button" class="btn btn-sm pull-xs-right btn-secondary" (click)="getCatFact()">
-  <ng-content></ng-content> 🐈
+<button type="button"
+        class="btn btn-sm pull-xs-right btn-secondary"
+        [ngClass]="{'disabled': isLoading}"
+        (click)="emitCatFact()"
+        [ngSwitch]="isLoading"
+        style="min-width: 8rem">
+  <span *ngSwitchCase="true">Loading ...</span>
+  <span *ngSwitchDefault><ng-content></ng-content> 🐈</span>
 </button>

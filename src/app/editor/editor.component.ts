@@ -92,11 +92,9 @@ export class EditorComponent implements OnInit {
     Object.assign(this.article, values);
   }
 
-  // TODO : markdown for cat quote, patch/set, better concatenate
   handleCatFact(catFact: CatFact) {
-    console.dir(catFact);
     this.articleForm.patchValue({
-      body: `${this.articleForm.value.body} ${catFact.text} \n`
+      body: [this.articleForm.value.body, catFact.text].filter(Boolean).join('\n')
     });
   }
 }

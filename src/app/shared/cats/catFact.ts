@@ -5,9 +5,7 @@ export interface CatFact {
   deleted:   boolean;
   user:      string;
   text:      string;
-  // createdAt: Date;
   createdAt: string;
-  // updatedAt: Date;
   updatedAt: string;
   __v:       number;
 }
