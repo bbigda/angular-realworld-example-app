@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpBackend, HttpClient, HttpParams} from '@angular/common/http';
 import {CatFact} from './catFact';
 import {firstValueFrom} from 'rxjs';
 
@@ -10,7 +10,10 @@ export class CatFactsService {
 
   CAT_FACT_URL = 'https://cat-fact.herokuapp.com';
 
-  constructor(private http: HttpClient) {
+  private http: HttpClient;
+
+  constructor(httpBackend: HttpBackend) {
+    this.http = new HttpClient(httpBackend);
   }
 
   getCatFact(): Promise<CatFact> {
