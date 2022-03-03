@@ -19,7 +19,7 @@ module.exports = function(config) {
       dir: require('path').join(__dirname, 'coverage'), reports: ['html', 'lcovonly'],
       fixWebpackSourcePaths: true
     },
-    
+
     reporters:
       config.angularCli && config.angularCli.codeCoverage
         ? ['progress', 'coverage-istanbul']
@@ -29,6 +29,6 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
-    singleRun: false
+    singleRun: true
   });
 };
