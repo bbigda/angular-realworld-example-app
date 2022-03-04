@@ -10,7 +10,7 @@ export class NotificationsService {
   constructor(private notifier: NotifierService) {
   }
 
-  displayError(error: HttpErrorResponse) {
+  displayError(error?: HttpErrorResponse) {
     this.notifier.notify('error', 'Something went wrong. Try again in a few minutes.');
   }
 }
