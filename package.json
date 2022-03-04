@@ -7,10 +7,13 @@
     "start": "ng serve",
     "build": "ng build --configuration production  --base-href ./ && cp CNAME dist/CNAME",
     "test": "ng test",
-    "lint": "ng lint --force",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "e2e": "ng e2e",
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "13.0.0",
